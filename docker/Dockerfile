@@ -1,11 +1,11 @@
-FROM ubuntu
+FROM ubuntu:18.04
 
 # Initialize the environment 
-RUN apt update
-RUN apt install -y libboost-all-dev
-RUN apt install libeigen3-dev
+RUN apt-get update
+RUN apt-get install -y libboost-all-dev
+RUN apt-get install -y libeigen3-dev
 RUN DEBIAN_FRONTEND=noninteractive apt-get -yq install libpcl-dev
-RUN apt install -y cmake git
+RUN apt-get install -y cmake git
 
 # Build the ETH3D binaries
 RUN git clone https://github.com/ETH3D/multi-view-evaluation.git
